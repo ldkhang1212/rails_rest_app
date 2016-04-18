@@ -11,7 +11,9 @@ Rails.application.routes.draw do
    get 'books/show_subjects'
    
    # User APIs
-   get 'users/list'
-   post 'users/create'
-   patch 'users/update'
+   get 'users/:id', to: 'users#get_one'
+   get 'users', to: 'users#list'
+   post 'users', to: 'users#create'
+   patch 'users', to: 'users#update'
+   delete 'users/:id', to: 'users#delete'
 end
